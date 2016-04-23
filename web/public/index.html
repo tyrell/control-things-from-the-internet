@@ -47,6 +47,14 @@ bi-directional communication between the page and and Arduino board.
 					style="background: #222; color: #00ff00;" rows="8" id="inData"></textarea>
 			</div>
 			<div class="col-md-4">
+				<h4>Light Sensor Data</h4>
+				<div class="progress">
+					<div class="progress-bar" role="progressbar" aria-valuenow="70"
+						aria-valuemin="0" aria-valuemax="100" id="lightData">
+						Waiting for data ...</div>
+				</div>
+			</div>
+			<div class="col-md-4">
 				<h4>Servo to position:</h4>
 				<div class="btn-group" data-toggle="buttons">
 					<label class="servobtn btn btn-primary"> <input
@@ -94,11 +102,11 @@ bi-directional communication between the page and and Arduino board.
 			ssl : true
 		});
 
-		// Subscribe to messages.
-		console.log("Subscribing to sensor channel ...");
+		// Subscribe to Thermometer messages.
+		console.log("Subscribing to thermometer channel ...");
 		pubnub
 				.subscribe({
-					channel : "sensor_channel",
+					channel : "thermometer_channel",
 					message : function(message, envelope, channelOrGroup, time,
 							channel) {
 						console.log("Message Received." + "\n"
@@ -116,6 +124,29 @@ bi-directional communication between the page and and Arduino board.
 									scrollTop : $("#inData")[0].scrollHeight
 											- $("#inData").height()
 								}, 200);
+					}
+				});
+
+		// Subscribe to Photosensor messages.
+		console.log("Subscribing to photoresistor channel ...");
+		pubnub
+				.subscribe({
+					channel : "photoresistor_channel",
+					message : function(message, envelope, channelOrGroup, time,
+							channel) {
+						console.log("Message Received." + "\n"
+								+ "Channel or Group: "
+								+ JSON.stringify(channelOrGroup) + "\n"
+								+ "Channel: " + JSON.stringify(channel) + "\n"
+								+ "Message: " + JSON.stringify(message) + "\n"
+								+ "Time: " + time + "\n" + "Raw Envelope: "
+								+ JSON.stringify(envelope));
+
+						console.log("Incoming sensor data:", message.data);
+						var value = (message.data / 1000) * 100;
+						$('#lightData').css('width', value + '%').attr(
+								'aria-valuenow', value);
+						$('#lightData').html(value + '%');
 					}
 				});
 

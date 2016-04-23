@@ -11,6 +11,7 @@ The breadboard brings together the following ...
  2. A Servo
  3. An LM35 temperature sensor
  4. An LED
+ 5. A Photoresistor
  
 ## The Internet
 A web UI controls the Servo and the on/off frequency of the LED. The UI also displays readings from the LM35 temperture sensor continuously.
