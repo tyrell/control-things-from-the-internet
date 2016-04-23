@@ -4,7 +4,7 @@ This is a Proof of Concept application, with a simple architecture for IoT use c
 ## The Circuit (Things)
 I have used a basic setup of things that I want to control over the Internet is as below.
 
-![Things circuit diagram](https://raw.githubusercontent.com/tyrell/control-things-from-the-internet/master/circuit/control-things-from-the-internet.png "Things circuit diagram")
+![Things circuit diagram](https://raw.githubusercontent.com/tyrell/control-things-from-the-internet/master/circuit/control-things-from-the-internet.png?token=AAvfoYG7BqEfsrr-50iUkEUNOQp6tPaTks5XJCVFwA%3D%3D "Things circuit diagram")
  
 The breadboard brings together the following ...
  1. An Arduino Uno 
