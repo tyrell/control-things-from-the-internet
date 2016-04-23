@@ -1,6 +1,9 @@
 # Control 'Things' from the Internet
 This is a Proof of Concept application, with a simple architecture for IoT use cases.
 
+[![Video overview](https://img.youtube.com/vi/F-WoFkbe0uc/0.jpg)](https://youtu.be/F-WoFkbe0uc "Video overview")
+
+
 ## The Circuit (Things)
 I have used a basic setup of things that I want to control over the Internet is as below.
 

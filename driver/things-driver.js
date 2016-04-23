@@ -109,7 +109,7 @@ board.on("ready", function() {
 	 */
 	var photoresistor = new five.Sensor({
 		pin : "A2",
-		freq : 250
+		freq : 2000
 	});
 
 	photoresistor.on("data", function() {
