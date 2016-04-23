@@ -28,4 +28,7 @@ A web UI controls the Servo and the on/off frequency of the LED. The UI also dis
 1. http://www.instructables.com/id/Javascript-robotics-and-browser-based-Arduino-cont/ - This tutorial was the starting point for my experiment. I removed the dependency on socket.io with Pubnub, and having to run a node server, with Firebase.
 2. Pubnub - https://www.pubnub.com
 3. Firebase - https://www.firebase.com
- 
+
+## License
+Copyright (c) 2016 Tyrell Perera <tyrell.perera@gmail.com>
+Licensed under the MIT license.
