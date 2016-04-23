@@ -25,7 +25,7 @@ A web UI controls the Servo and the on/off frequency of the LED. The UI also dis
 6. Load index.html either directly in the web browser to test that everything communicates with each other. Once verified, host it on the Internet.
 
 ## References
-1. http://www.instructables.com/id/Javascript-robotics-and-browser-based-Arduino-cont/ - This tutorial was the starting point for my experiment. I removed the dependency on socket.io with Pubnub, and having to run a node server, with Firebase.
+1. http://www.instructables.com/id/Javascript-robotics-and-browser-based-Arduino-cont/ - This tutorial was the starting point for my experiment. I replaced the dependency on socket.io with Pubnub. Instead of having to run a node server to host HTML, I hosted the UI in Firebase. This de-couples the UI from the device drivers.
 2. Pubnub - https://www.pubnub.com
 3. Firebase - https://www.firebase.com
 
