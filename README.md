@@ -19,6 +19,8 @@ The breadboard brings together the following ...
 ## The Internet
 A web UI controls the Servo and the on/off frequency of the LED. The UI also displays readings from the LM35 temperture sensor continuously.
 
+![Demo Photo](https://raw.githubusercontent.com/tyrell/control-things-from-the-internet/master/circuit/demo-picture.png?token=AAvfodjRvWCX4eqX41PWdcln6pg5hmVQks5XJzfXwA%3D%3D "Demo Photo")
+
 ## How to run
 1. Complete breadboard connections as illustrated.
 2. Plug Arduino to the host computer via USB.
