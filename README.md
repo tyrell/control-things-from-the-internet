@@ -19,7 +19,7 @@ The breadboard brings together the following ...
  
 
 ## The Internet
-A web UI controls the Servo and the on/off frequency of the LED. The UI also displays readings from the LM35 temperture sensor continuously. The progress bar displays reading form the photoresistor. Higher percentage in he progress bar indicates more light, vise versa.
+A web UI controls the Servo and the on/off frequency of the LED. The UI also displays readings from the LM35 temperture sensor continuously. The progress bar displays readings from the photoresistor. Higher percentage indicates more light, vise versa.
 
 ![Demo Photo](https://raw.githubusercontent.com/tyrell/control-things-from-the-internet/master/circuit/demo-picture.png?token=AAvfodjRvWCX4eqX41PWdcln6pg5hmVQks5XJzfXwA%3D%3D "Demo Photo")
 
