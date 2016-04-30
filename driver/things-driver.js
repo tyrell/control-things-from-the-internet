@@ -8,6 +8,11 @@
  * application. The host can be a laptop or a Raspberry Pi.The host must be
  * connected to the Internet.
  * 
+ * TIP: To run as a background process ...
+ * 
+ * 		- npm install forever
+ * 		- forever start things-driver.js
+ * 
  * @author Tyrell Perera (tyrell.perera@gmail.com)
  * 
  */
