@@ -20,11 +20,20 @@ var pubnub = require("pubnub")({
 });
 
 /**
+ * Don't die on uncaught exceptions. Such as the Arduino getting unplugged.
+ */
+process.on('uncaughtException', function(err) {
+	console.log('Caught exception: ' + err);
+});
+
+/**
  * This event is triggered by johnny-five when the Arduino board is ready for
  * communication with the host.
  * 
  */
 board.on("ready", function() {
+
+	console.log("Starting up ... ");
 
 	/*
 	 * Initialise Servo and listen to messages from the servo_channel.
@@ -152,5 +161,4 @@ board.on("ready", function() {
 
 		}
 	});
-
 });
