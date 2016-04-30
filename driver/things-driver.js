@@ -26,131 +26,138 @@ var pubnub = require("pubnub")({
  */
 board.on("ready", function() {
 
-	/*
-	 * Initialise Servo and listen to messages from the servo_channel.
-	 * 
-	 * The agreed message format within the channel is { "action": "turn",
-	 * "angle": 180 }
-	 */
-	var servo = new five.Servo({
-		id : "MyServo",
-		pin : 6,
-		type : "standard",
-		range : [ 0, 180 ],
-		fps : 100,
-		invert : false,
-		startAt : 0,
-		center : true,
-		specs : {
-			speed : five.Servo.Continuous.speeds["@5.0V"]
-		}
-	});
+	try {
 
-	console.log("Subscribing to servo_channel");
-	pubnub.subscribe({
-		channel : "servo_channel",
-		callback : function(message) {
-			console.log("Message >>", message);
-			try {
+		console.log("Starting up ... ");
 
-				// Stop whatever the servo is doing at the moment.
-				servo.stop();
-
-				if (message.action == 'turn') {
-					servo.to(message.angle);
-				}
-
-				if (message.action == 'sweep') {
-					servo.sweep();
-				}
-
-			} catch (e) {
-				console.log("Error: ", e);
-			}
-
-		}
-	});
-
-	/*
-	 * Initialise Thermometer.
-	 * 
-	 * When the sensor emits data, publish to the sensor message channel.
-	 * 
-	 * The agreed message format is { "data" : " XX°C, YYY°F" }
-	 */
-	var thermometer = new five.Thermometer({
-		pin : "A0",
-		controler : "LM35",
-		freq : 2000
-	});
-
-	thermometer.on("data", function() {
-		console.log("Thermometer : " + this.celsius + "°C", this.fahrenheit
-				+ "°F");
-
-		var message = {
-			"data" : this.celsius + "°C, " + this.fahrenheit + "°F"
-		};
-		pubnub.publish({
-			channel : 'thermometer_channel',
-			message : message,
-			error : function(e) {
-				console.log("Failed to publish sensor data.", e);
+		/*
+		 * Initialise Servo and listen to messages from the servo_channel.
+		 * 
+		 * The agreed message format within the channel is { "action": "turn",
+		 * "angle": 180 }
+		 */
+		var servo = new five.Servo({
+			id : "MyServo",
+			pin : 6,
+			type : "standard",
+			range : [ 0, 180 ],
+			fps : 100,
+			invert : false,
+			startAt : 0,
+			center : true,
+			specs : {
+				speed : five.Servo.Continuous.speeds["@5.0V"]
 			}
 		});
-	});
 
-	/*
-	 * Initialise Photoresistor.
-	 * 
-	 * When the sensor emits data, publish to the sensor message channel.
-	 * 
-	 * The agreed message format is { "data" : 0000 }
-	 */
-	var photoresistor = new five.Sensor({
-		pin : "A2",
-		freq : 2000
-	});
+		console.log("Subscribing to servo_channel");
+		pubnub.subscribe({
+			channel : "servo_channel",
+			callback : function(message) {
+				console.log("Message >>", message);
+				try {
 
-	photoresistor.on("data", function() {
-		console.log("Photoresistor : " + this.value);
+					// Stop whatever the servo is doing at the moment.
+					servo.stop();
 
-		var message = {
-			"data" : this.value
-		};
-		pubnub.publish({
-			channel : 'photoresistor_channel',
-			message : message,
-			error : function(e) {
-				console.log("Failed to publish sensor data.", e);
-			}
-		});
-	});
+					if (message.action == 'turn') {
+						servo.to(message.angle);
+					}
 
-	/*
-	 * Initialise the LED on pin 13, default strobe every 1000ms.
-	 * 
-	 * Listen to the messages from the led_channel. The agreed message format
-	 * within the channel is { "action": "led","delay": 1000 }
-	 */
-	var led = new five.Led(13).strobe(1000);
+					if (message.action == 'sweep') {
+						servo.sweep();
+					}
 
-	console.log("Subscribing to led_channel");
-	pubnub.subscribe({
-		channel : "led_channel",
-		callback : function(message) {
-			console.log("Message >>", message);
-			try {
-
-				if (board.isReady) {
-					led.strobe(message.delay);
+				} catch (e) {
+					console.log("Error: ", e);
 				}
 
-			} catch (e) {
-				console.log("Error: ", e);
 			}
+		});
 
-		}
-	});
+		/*
+		 * Initialise Thermometer.
+		 * 
+		 * When the sensor emits data, publish to the sensor message channel.
+		 * 
+		 * The agreed message format is { "data" : " XX°C, YYY°F" }
+		 */
+		var thermometer = new five.Thermometer({
+			pin : "A0",
+			controler : "LM35",
+			freq : 2000
+		});
+
+		thermometer.on("data", function() {
+			console.log("Thermometer : " + this.celsius + "°C", this.fahrenheit
+					+ "°F");
+
+			var message = {
+				"data" : this.celsius + "°C, " + this.fahrenheit + "°F"
+			};
+			pubnub.publish({
+				channel : 'thermometer_channel',
+				message : message,
+				error : function(e) {
+					console.log("Failed to publish sensor data.", e);
+				}
+			});
+		});
+
+		/*
+		 * Initialise Photoresistor.
+		 * 
+		 * When the sensor emits data, publish to the sensor message channel.
+		 * 
+		 * The agreed message format is { "data" : 0000 }
+		 */
+		var photoresistor = new five.Sensor({
+			pin : "A2",
+			freq : 2000
+		});
+
+		photoresistor.on("data", function() {
+			console.log("Photoresistor : " + this.value);
+
+			var message = {
+				"data" : this.value
+			};
+			pubnub.publish({
+				channel : 'photoresistor_channel',
+				message : message,
+				error : function(e) {
+					console.log("Failed to publish sensor data.", e);
+				}
+			});
+		});
+
+		/*
+		 * Initialise the LED on pin 13, default strobe every 1000ms.
+		 * 
+		 * Listen to the messages from the led_channel. The agreed message
+		 * format within the channel is { "action": "led","delay": 1000 }
+		 */
+		var led = new five.Led(13).strobe(1000);
+
+		console.log("Subscribing to led_channel");
+		pubnub.subscribe({
+			channel : "led_channel",
+			callback : function(message) {
+				console.log("Message >>", message);
+				try {
+
+					if (board.isReady) {
+						led.strobe(message.delay);
+					}
+
+				} catch (e) {
+					console.log("Error: ", e);
+				}
+
+			}
+		});
+	} catch (e) {
+		console.log("Error: ", e);
+	}
 
 });
