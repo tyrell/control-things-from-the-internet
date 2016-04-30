@@ -8,10 +8,9 @@
  * application. The host can be a laptop or a Raspberry Pi.The host must be
  * connected to the Internet.
  * 
- * TIP: To run as a background process ...
- * 
- * 		- npm install forever
- * 		- forever start things-driver.js
+ * TIP: To run as a background process ... 
+ * 	- npm install forever 
+ * 	- forever start things-driver.js
  * 
  * @author Tyrell Perera (tyrell.perera@gmail.com)
  * 
@@ -22,13 +21,6 @@ var pubnub = require("pubnub")({
 	ssl : true,
 	publish_key : "pub-c-63712152-b811-477f-befb-b835715bbeca",
 	subscribe_key : "sub-c-2e5abf04-0869-11e6-a6c8-0619f8945a4f"
-});
-
-/**
- * Don't die on uncaught exceptions. Such as the Arduino getting unplugged.
- */
-process.on('uncaughtException', function(err) {
-	console.log('Caught exception: ' + err);
 });
 
 /**
@@ -166,4 +158,12 @@ board.on("ready", function() {
 
 		}
 	});
+});
+
+/**
+ * This event is triggered by Johnny-five when the board is disconnected.
+ * 
+ */
+board.on("close", function() {
+	console.log('closed')
 });
