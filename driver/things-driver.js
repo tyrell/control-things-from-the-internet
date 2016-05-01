@@ -64,6 +64,7 @@ board.on("ready", function() {
 
 				if (message.action == 'turn') {
 					servo.to(message.angle);
+					servo.stop();
 				}
 
 				if (message.action == 'sweep') {
