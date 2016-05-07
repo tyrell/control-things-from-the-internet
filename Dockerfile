@@ -7,7 +7,7 @@ RUN echo "deb http://apt.adafruit.com/raspbian/ wheezy main" >> /etc/apt/sources
     DEBIAN_FRONTEND=noninteractive apt-get install -y --force-yes node && \
     apt-get clean
  
-RUN npm install onoff
+RUN npm install forever
 RUN npm install johnny-five
 RUN npm install pubnub
 
@@ -15,4 +15,4 @@ WORKDIR /driver
 
 ENTRYPOINT ["node", "/driver/things-driver.js"]
 
-COPY things-driver.js /driver/
+COPY driver/things-driver.js /driver/
