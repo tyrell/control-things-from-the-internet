@@ -15,13 +15,13 @@ The breadboard brings together the following ...
  4. An LED
  5. A Photoresistor
  
-![Things circuit diagram](https://raw.githubusercontent.com/tyrell/control-things-from-the-internet/master/circuit/control-things-from-the-internet.png?token=AAvfodMHkvOna2BvsPavXx-LtCsFld16ks5XJCa1wA%3D%3D "Things circuit diagram")
+![Things circuit diagram](https://raw.githubusercontent.com/tyrell/control-things-from-the-internet/master/circuit/control-things-from-the-internet.png?token=AAvfoXWbH1XVzK6YvDV0Z3DYLoNjNpc9ks5XOAvzwA%3D%3D "Things circuit diagram")
  
 
 ## The Internet
 A web UI controls the Servo and the on/off frequency of the LED. The UI also displays readings from the LM35 temperture sensor continuously. The progress bar displays readings from the photoresistor. Higher percentage indicates more light, vise versa.
 
-![Demo Photo](https://raw.githubusercontent.com/tyrell/control-things-from-the-internet/master/circuit/demo-picture.png?token=AAvfodjRvWCX4eqX41PWdcln6pg5hmVQks5XJzfXwA%3D%3D "Demo Photo")
+![Demo Photo](https://raw.githubusercontent.com/tyrell/control-things-from-the-internet/master/circuit/demo-picture.png?token=AAvfoRKTzsJ-6WAqpflyjB_hRAdjU-g0ks5XOAucwA%3D%3D "Demo Photo")
 
 
 ## How to run
