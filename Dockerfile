@@ -1,4 +1,8 @@
-FROM resin/raspberrypi-node
+# Uncomment below for local testing
+FROM node:argon
+
+# Uncomment below and remove above for Raspberry Pi
+# FROM resin/raspberrypi-node
 
 MAINTAINER Tyrell Perera
  
@@ -13,11 +17,5 @@ RUN npm install
 # Bundle app source
 COPY driver/things-driver.js /usr/src/app
 
-# Add our crontab file
-COPY driver/things-driver-cron.conf /root/crons.conf
-
-# Use the crontab file
-RUN crontab /root/things-driver-cron.conf
-
-# Start cron
-RUN cron
+# Run the app
+RUN npm start
