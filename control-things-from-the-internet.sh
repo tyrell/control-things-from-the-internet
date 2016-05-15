@@ -7,3 +7,4 @@ sudo /usr/sbin/service docker start
 
 # start the container
 sudo /usr/bin/docker run -dti --privileged tyrell/control-things-from-the-internet:rpi-latest
+
