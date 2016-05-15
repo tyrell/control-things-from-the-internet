@@ -5,7 +5,7 @@
   "author": "Tyrell Perera <tyrell.perera@gmail.com>",
   "main": "things-driver.js",
   "scripts": {
-    "start": "node things-driver.js"
+    "start": "forever things-driver.js"
   },
   "dependencies": {
     "forever": "^0.15.1",

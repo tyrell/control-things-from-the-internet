@@ -28,10 +28,21 @@ A web UI controls the Servo and the on/off frequency of the LED. The UI also dis
 1. Complete breadboard connections as illustrated.
 2. Plug Arduino to the host computer via USB.
 3. Install the Arduino IDE and load Standard Firmata.
-4. Install Node.js along with Johnny-five and Pubnub npm modules. 
-5. Run the driver (node things-driver.js).
+4. Install Node.js  
+5. clone git repository to your local machine.
+6. npm install
+7. npm start
 6. Load index.html either directly in the web browser to test that everything communicates with each other. Once verified, host it on the Internet.
 
+## How to run as a Docker container
+1. Install Docker on your raspberry pi
+2. docker run -ti --privileged tyrell/control-things-from-the-internet:rpi-latest
+
+## Setup a cron job to restart the application after reboot
+1. sudo crontab -e
+2. Add the following line to the file and save
+
+`@reboot /bin/bash /<where-you-cloned-the-git-repo>/control-things-from-the-internet.sh 2> /<where-you-cloned-the-git-repo>/cron_errors.log`
 
 ## References
 1. http://www.instructables.com/id/Javascript-robotics-and-browser-based-Arduino-cont/ - This tutorial was the starting point for my experiment. I replaced the dependency on Socket.io with Pubnub. Instead of having to run a node server to host HTML, I hosted the UI in Firebase. This decouples my UI from the device drivers.
