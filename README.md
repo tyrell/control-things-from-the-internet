@@ -5,7 +5,7 @@ This is a Proof of Concept application, with a simple architecture for IoT use c
 
 
 ## The Circuit (Things)
-I used a basic setup of 'things' that I want to control over the Internet.
+I used a really basic setup of 'things' that I want to control over the Internet.
 
 The breadboard brings together the following ...
 
@@ -35,8 +35,10 @@ A web UI controls the Servo and the on/off frequency of the LED. The UI also dis
 6. Load index.html either directly in the web browser to test that everything communicates with each other. Once verified, host it on the Internet.
 
 ## How to run as a Docker container
-1. Install Docker on your raspberry pi
-2. docker run -ti --privileged tyrell/control-things-from-the-internet:rpi-latest
+1. Install Docker on your raspberry pi (I have documented my work flow at https://gist.github.com/tyrell/2963c6b121f79096ee0008f5a47cf347)
+2. docker run -dti --privileged tyrell/control-things-from-the-internet:rpi-latest
+
+TIP: Head over to https://hub.docker.com/r/tyrell/control-things-from-the-internet to find the Docker repository for my images.
 
 ## Setup a cron job to restart the application after reboot
 1. sudo crontab -e
@@ -48,6 +50,7 @@ A web UI controls the Servo and the on/off frequency of the LED. The UI also dis
 1. http://www.instructables.com/id/Javascript-robotics-and-browser-based-Arduino-cont/ - This tutorial was the starting point for my experiment. I replaced the dependency on Socket.io with Pubnub. Instead of having to run a node server to host HTML, I hosted the UI in Firebase. This decouples my UI from the device drivers.
 2. Pubnub - https://www.pubnub.com
 3. Firebase - https://www.firebase.com
+4. Resin.io - https://resin.io/ They have operationalised deployments in a way I find really interesting.
 
 
 ## License
