@@ -4,7 +4,7 @@ FROM node:argon
 # Uncomment below and remove above for Raspberry Pi
 # FROM resin/raspberrypi-node
 
-MAINTAINER Tyrell Perera
+MAINTAINER tyrell
  
 # Create app directory
 RUN mkdir -p /usr/src/app
