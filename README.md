@@ -23,6 +23,7 @@ A web UI controls the Servo and the on/off frequency of the LED. The UI also dis
 
 ![Demo Photo](https://raw.githubusercontent.com/tyrell/control-things-from-the-internet/master/circuit/demo-picture.png?token=AAvfoVpTcZUJIrivKJXv5XW9WqM2mEiJks5XQXtEwA%3D%3D "Demo Photo")
 
+I have hosted this UI in Firebase at https://servo-controller.firebaseapp.com/ 
 
 ## How to run
 1. Complete breadboard connections as illustrated.
@@ -54,7 +55,7 @@ TIP: Head over to https://hub.docker.com/r/tyrell/control-things-from-the-intern
 
 I have a Node-RED docker image, with Johnny Five and Pubnub packaged in at https://hub.docker.com/r/tyrell/node-red-docker/ 
 
-![Node-RED Flow](https://raw.githubusercontent.com/tyrell/control-things-from-the-internet/master/node-red/node-red.png?token=AAvfoVpTcZUJIrivKJXv5XW9WqM2mEiJks5XQXtEwA%3D%3D "Demo Photo")
+![Node-RED Flow](https://raw.githubusercontent.com/tyrell/control-things-from-the-internet/master/node-red/node-red.png?token=AAvfobQ_SBWK-xOLVnDSjJ8bttRbEkqSks5XSTGNwA%3D%3D "Node-RED Flow")
 
 ## References
 1. http://www.instructables.com/id/Javascript-robotics-and-browser-based-Arduino-cont/ - This tutorial was the starting point for my experiment. I replaced the dependency on Socket.io with Pubnub. Instead of having to run a node server to host HTML, I hosted the UI in Firebase. This decouples my UI from the device drivers.
