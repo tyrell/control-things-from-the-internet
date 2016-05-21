@@ -62,6 +62,8 @@ I have a Node-RED docker image, with Johnny Five and Pubnub packaged in at https
 2. Pubnub - https://www.pubnub.com
 3. Firebase - https://www.firebase.com
 4. Resin.io - https://resin.io/ They have operationalised deployments in a way I find really interesting.
+5. Node-RED - http://nodered.org/
+6. Johnny Five and Node-RED HowTo - https://github.com/rwaldron/johnny-five/wiki/Getting-started-with-Raspberry-Pi-node-red-and-IoT
 
 
 ## License
