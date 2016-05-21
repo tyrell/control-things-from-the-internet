@@ -54,6 +54,8 @@ TIP: Head over to https://hub.docker.com/r/tyrell/control-things-from-the-intern
 
 I have a Node-RED docker image, with Johnny Five and Pubnub packaged in at https://hub.docker.com/r/tyrell/node-red-docker/ 
 
+![Node-RED Flow](https://raw.githubusercontent.com/tyrell/control-things-from-the-internet/master/node-red/node-red.png?token=AAvfoVpTcZUJIrivKJXv5XW9WqM2mEiJks5XQXtEwA%3D%3D "Demo Photo")
+
 ## References
 1. http://www.instructables.com/id/Javascript-robotics-and-browser-based-Arduino-cont/ - This tutorial was the starting point for my experiment. I replaced the dependency on Socket.io with Pubnub. Instead of having to run a node server to host HTML, I hosted the UI in Firebase. This decouples my UI from the device drivers.
 2. Pubnub - https://www.pubnub.com
