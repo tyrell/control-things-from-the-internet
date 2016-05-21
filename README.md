@@ -54,7 +54,7 @@ TIP: Head over to https://hub.docker.com/r/tyrell/control-things-from-the-intern
 ## How to run as a Node-RED flow
 1. Install Node-RED on your Raspberry Pi.
 2. Setup the circuit and attach your Arduino to the Pi.
-3. Go to http://<your-pi-ip-address>:1880 in a browser to view the Node-RED flow designer.
+3. Go to http://[your-pi-ip-address]:1880 in a browser to view the Node-RED flow designer.
 4. Copy and paste the flow definition from node-red/flows_raspberrypi.json file and deploy to Node-RED
 
 I have a Node-RED docker image, with Johnny Five and Pubnub packaged in at https://hub.docker.com/r/tyrell/node-red-docker/ 
