@@ -1,5 +1,5 @@
 # Control 'Things' from the Internet
-This is a Proof of Concept application I maintain to fine tune a develop, test and deployment work flow for IoT use cases.
+This is a Proof of Concept application I maintain to fine tune a develop+test+deployment work-flow for IoT use cases.
 
 [![Video overview](https://img.youtube.com/vi/F-WoFkbe0uc/0.jpg)](https://youtu.be/F-WoFkbe0uc "Video overview")
 
@@ -40,16 +40,16 @@ In May 2016, Google announced major upgrades to Firebase during their Google I/0
 6. Load index.html either directly in the web browser to test that everything communicates with each other. Once verified, host it on the Internet.
 
 ## How to run as a Docker container
-1. Install Docker on your raspberry pi (I have documented my work flow at https://gist.github.com/tyrell/2963c6b121f79096ee0008f5a47cf347)
-2. docker run -dti --privileged tyrell/control-things-from-the-internet:rpi-latest
+1. Install Docker on your raspberry pi. I have documented my work flow at https://gist.github.com/tyrell/2963c6b121f79096ee0008f5a47cf347 .
+2. `docker run -dti --privileged tyrell/control-things-from-the-internet:rpi-latest`
 
-TIP: Head over to https://hub.docker.com/r/tyrell/control-things-from-the-internet to find the Docker repository for my images.
+TIP: Head over to https://hub.docker.com/r/tyrell/control-things-from-the-internet to find the Docker repository for my images. I usually TAG my images as rpi-latest and x86-latest, the two main platforms I run containers in.
 
 ### Setup a cron job to restart the container after a reboot
 1. sudo crontab -e
 2. Add the following line to the file and save
 
-`@reboot /bin/bash /<where-you-cloned-the-git-repo>/control-things-from-the-internet.sh 2> /<where-you-cloned-the-git-repo>/cron_errors.log`
+`@reboot /bin/bash /<where-you-cloned-the-git-repo>/scripts/control-things-from-the-internet.sh 2> /<where-you-cloned-the-git-repo>/cron_errors.log`
 
 ## How to run as a Node-RED flow
 1. Install Node-RED on your Raspberry Pi.
