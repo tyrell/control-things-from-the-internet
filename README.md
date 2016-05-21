@@ -46,7 +46,7 @@ In May 2016, Google announced major upgrades to Firebase during their Google I/0
 TIP: Head over to https://hub.docker.com/r/tyrell/control-things-from-the-internet to find the Docker repository for my images. I usually TAG my images as rpi-latest and x86-latest, the two main platforms I run containers in.
 
 ### Setup a cron job to restart the container after a reboot
-1. sudo crontab -e
+1. `sudo crontab -e`
 2. Add the following line to the file and save
 
 `@reboot /bin/bash /<where-you-cloned-the-git-repo>/scripts/control-things-from-the-internet.sh 2> /<where-you-cloned-the-git-repo>/cron_errors.log`
