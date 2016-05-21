@@ -40,11 +40,19 @@ A web UI controls the Servo and the on/off frequency of the LED. The UI also dis
 
 TIP: Head over to https://hub.docker.com/r/tyrell/control-things-from-the-internet to find the Docker repository for my images.
 
-## Setup a cron job to restart the application after reboot
+### Setup a cron job to restart the container after a reboot
 1. sudo crontab -e
 2. Add the following line to the file and save
 
 `@reboot /bin/bash /<where-you-cloned-the-git-repo>/control-things-from-the-internet.sh 2> /<where-you-cloned-the-git-repo>/cron_errors.log`
+
+## How to run as a Node-RED flow
+1. Install Node-RED on your Raspberry Pi.
+2. Setup the circuit and attach your Arduino to the Pi.
+3. Go to http://<your-pi-ip-address>:1880 in a browser to view the Node-RED flow designer.
+4. Copy and paste the flow definition from node-red/flows_raspberrypi.json file and deploy to Node-RED
+
+I have a Node-RED docker image, with Johnny Five and Pubnub packaged in at https://hub.docker.com/r/tyrell/node-red-docker/ 
 
 ## References
 1. http://www.instructables.com/id/Javascript-robotics-and-browser-based-Arduino-cont/ - This tutorial was the starting point for my experiment. I replaced the dependency on Socket.io with Pubnub. Instead of having to run a node server to host HTML, I hosted the UI in Firebase. This decouples my UI from the device drivers.
