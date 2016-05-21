@@ -1,5 +1,5 @@
 # Control 'Things' from the Internet
-This is a Proof of Concept application, with a simple architecture for IoT use cases.
+This is a Proof of Concept application I maintain to fine tune a develop, test and deployment work flow for IoT use cases.
 
 [![Video overview](https://img.youtube.com/vi/F-WoFkbe0uc/0.jpg)](https://youtu.be/F-WoFkbe0uc "Video overview")
 
@@ -24,6 +24,10 @@ A web UI controls the Servo and the on/off frequency of the LED. The UI also dis
 ![Demo Photo](https://raw.githubusercontent.com/tyrell/control-things-from-the-internet/master/circuit/demo-picture.png?token=AAvfoVpTcZUJIrivKJXv5XW9WqM2mEiJks5XQXtEwA%3D%3D "Demo Photo")
 
 I have hosted this UI in Firebase at https://servo-controller.firebaseapp.com/ 
+
+In May 2016, Google announced major upgrades to Firebase during their Google I/0 conference. Now I love it even more. 
+
+![Firebase Console](https://raw.githubusercontent.com/tyrell/control-things-from-the-internet/master/web/firebase-screenshot.png?token=AAvfocIw9acMGkSf1mgdJF8c-sBHqsa6ks5XShxXwA%3D%3D "Firebase Console") 
 
 ## How to run
 1. Complete breadboard connections as illustrated.
